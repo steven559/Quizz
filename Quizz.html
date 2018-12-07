@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizz</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="Quizz.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div id="englob">
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+<h1 class="col-sm-4">Quizz </h1>
+
+        <div class="col-sm-4">
+
+            </div>
+        </div>
+    </div>
+
+<div>
+    <div id="countdown">
+        <div id="countdown-number"></div>
+        <svg id="svg">
+            <circle id="test" r="72" cx="80" cy="80" class="test"></circle>
+        </svg>
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+            <div class="col-sm-6" id="question"></div>
+            <div class="col-sm-3"></div>
+
+
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" id="reponse"><div id="reponse1"></div><br><div id="reponse2"></div><br><div id="reponse3"></div></div>
+        <div class="col-sm-3"></div>
+
+
+
+
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-2"><button type="button" id="but">Valider</button></div>
+        <div class="col-sm-5"></div>
+
+
+
+
+    </div>
+</div>
+</div>
+</div>
+<div class="container" id="score">
+    <div class="row">
+        <div class="col-sm-2" id="tit" >SCORE</div>
+<div class="col-sm-3" id="stat"></div><br>
+        <div class="col-sm-7" id="tt">    <button onclick="reset()" id="boutton" >RECOMENCER</button></div>
+
+        <audio src="michael-myers-theme-song.mp3" id="audio"></audio>
+    </div>
+</div>
+<script src="Quizz.js"></script>
+</body>
+</html>

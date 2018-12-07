@@ -1,0 +1,129 @@
+h1 {
+    font-size: 32px;
+    line-height: 5%;
+    text-shadow: -1px -1px #fb6, 1px 1px #dd6600, -3px 0 4px #000;
+    font-family: tt,"Segoe print", Arial, Helvetica, sans-serif;
+    color: #FF9933;
+    padding: 5%;
+    font-weight: lighter;
+    -moz-box-shadow: 2px 2px 6px #888;
+    -webkit-box-shadow: 2px 2px 6px #888;
+    box-shadow: 2px 2px 6px #888;
+    text-align: center;
+}
+@font-face {
+    font-family: tt;
+    src: url("Hallowed Eve Sample.ttf");
+}
+
+#question{
+    margin-top:0;
+    border: solid black 1px;
+    border-radius:30px;
+    height:15vh;
+    box-shadow: 2px 2px 6px #888;
+    text-align: center;
+    padding-top: 3.5%;
+}
+
+#reponse{
+    margin-top:10%;
+    border: solid black 1px;
+    border-radius:30px;
+    height:25vh;
+    box-shadow: 2px 2px 6px #888;
+    text-align: center;
+    padding-top: 2%;
+
+}
+#but{
+    margin-top: 6%;
+    margin-left: 28%;
+}
+#score{
+    display: none;
+    width:100%;
+    height:100vh;
+
+
+}
+#tit{
+    margin-left: 40%;
+}
+#tt{
+    margin-top: 5%;
+    margin-left: 25%;
+    border: solid black 1px;
+    border-radius:30px;
+    height:85vh;
+    box-shadow: 2px 2px 6px #888;
+    text-align: center;
+    padding-top: 2%;
+    overflow-y: auto;
+
+
+}
+body{
+    background-image: url("https://images3.alphacoders.com/939/thumb-1920-939120.png") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:red;
+   font-size: 150%;
+    font-family: tt;
+
+
+
+
+}
+
+#countdown {
+    position: relative;
+
+
+    height: 160px;
+    width: 160px;
+    text-align: center;
+    font-family: oswald;
+    font-size: 22px;
+    margin-left: 80%;
+}
+
+#countdown-number {
+    color: red;
+    display: inline-block;
+    line-height: 160px;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: 160px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+svg circle {
+
+}
+
+.test{
+    stroke-dasharray: 452px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 3px;
+    stroke: red;
+    fill: none;
+    animation: countdown 20s linear infinite  ;
+}
+
+@keyframes countdown {
+    from {
+        stroke-dashoffset: 0px;
+    }
+    to {
+        stroke-dashoffset: 452px;
+    }
+}
+
+
