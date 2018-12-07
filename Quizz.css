@@ -30,7 +30,7 @@ h1 {
     margin-top:10%;
     border: solid black 1px;
     border-radius:30px;
-    height:25vh;
+
     box-shadow: 2px 2px 6px #888;
     text-align: center;
     padding-top: 2%;
@@ -64,9 +64,7 @@ h1 {
 
 }
 body{
-    background-image: url("https://images3.alphacoders.com/939/thumb-1920-939120.png") !important;
-    background-size: cover;
-    background-repeat: no-repeat;
+
     color:red;
    font-size: 150%;
     font-family: tt;
@@ -92,6 +90,7 @@ body{
     color: red;
     display: inline-block;
     line-height: 160px;
+    margin-right: 20vh;
 }
 
 svg {
@@ -101,6 +100,7 @@ svg {
     width: 160px;
     height: 160px;
     transform: rotateY(-180deg) rotateZ(-90deg);
+    margin-right: 9vh;
 }
 
 svg circle {
@@ -126,4 +126,31 @@ svg circle {
     }
 }
 
+body{
+    background-image: url("https://images3.alphacoders.com/939/thumb-1920-939120.png") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100vh;
+    cursor:url("curseur.png"),pointer;
 
+}
+#boutton{
+    margin-bottom: 10vh;
+    display: block;
+
+    margin-left: 30vh;
+}
+Mode Portrait  @media only screen and (min-device-width: 360px) and (max-device-width: 640px) {
+    body{
+        background-image: url("https://images3.alphacoders.com/939/thumb-1920-939120.png") !important;
+        background-size:200vh ;
+    }
+}
+
+
+#but{
+    cursor:url("curseur.png"),pointer;
+}
+#boutton{
+    cursor:url("curseur.png"),pointer;
+}

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="Quizz.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div id="englob">
@@ -31,7 +32,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-3"></div>
-            <div class="col-sm-6" id="question"></div>
+            <div class="col-sm-6" id="question"> </div>
             <div class="col-sm-3"></div>
 
 
@@ -67,15 +68,17 @@
 </div>
 </div>
 </div>
+
 <div class="container" id="score">
     <div class="row">
         <div class="col-sm-2" id="tit" >SCORE</div>
 <div class="col-sm-3" id="stat"></div><br>
-        <div class="col-sm-7" id="tt">    <button onclick="reset()" id="boutton" >RECOMENCER</button></div>
-
+        <div class="col-sm-7" id="tt"><button onclick="reset()" id="boutton" >RECOMENCER</button></div>
         <audio src="michael-myers-theme-song.mp3" id="audio"></audio>
+        <audio src="tronconeuz.mp3" id="bruit"></audio>
     </div>
 </div>
+<img id="gif" src="https://media2.giphy.com/media/3o7aTu1MPDm08RnhO8/giphy.gif?cid=3640f6095c0a3ac36b77375149c009f4" width="1580" height=912"   >
 <script src="Quizz.js"></script>
 </body>
 </html>

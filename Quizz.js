@@ -102,17 +102,22 @@ tabreponse=[
 
 
 ];
+
+let sound=new Audio();
 let snd = new Audio();
 snd.src = "michael-myers-theme-song.mp3";
-
+sound.src ="tronconeuz.mp3";
 snd.loop = 0;
-
+sound.loop=0;
+sound.volume=1;
 snd.volume = 1;
 var t=0;
 var choix;
 var countdownNumberEl = document.getElementById('countdown-number');
 var countdown = 20;
-document.getElementById("boutton").style.display="none";
+var gif=document.getElementById("gif");
+var englob=document.getElementById("englob");
+gif.style.display='none';
 if($("#reponse1").css({"backgroundColor":""}) && $("#reponse2").css({"backgroundColor":""}) && $("#reponse3").css({"backgroundColor":""})){
     document.getElementById("but").disabled=true;
 }
@@ -175,7 +180,11 @@ var nombreQuestion=0;
 $("#reponse1").html(tabreponse[t].reponse);
 $("#reponse2").html(tabreponse[t].reponse2);
 $("#reponse3").html(tabreponse[t].reponse3);
-setInterval(function() {
+
+
+//compteurObj = Stocke id setInterval ou setTimeout
+
+var compteurObj = setInterval(function() {
     countdown = --countdown;
 
     countdownNumberEl.textContent = countdown;
@@ -187,25 +196,39 @@ setInterval(function() {
 
     }
     if(countdown==0 ){
-        nombreQuestion++;
-        t++;
-        $("#reponse2").html(tabreponse[t].reponse2);
-        $("#reponse1").html(tabreponse[t].reponse);
-        $("#reponse3").html(tabreponse[t].reponse3);
+        englob.style.display="none";
+        gif.style.display="block";
+        sound.play();
+        snd.pause();
+    }
+        if(countdown==-1) {
+         sound.pause();
+            gif.style.display = "none";
+            nombreQuestion++;
+            countdown = 20;
+            englob.style.display = "block";
+            t++;
+            $("#reponse2").html(tabreponse[t].reponse2);
+            $("#reponse1").html(tabreponse[t].reponse);
+            $("#reponse3").html(tabreponse[t].reponse3);
 
-        $("#question").html(tabquizz[t].Question);
-
-countdown=20;
+            $("#question").html(tabquizz[t].Question);
 
 
+            $("#tt").append("pour la question" + " " + tabquizz[t].Question + "<br>" + "la reponse étais" + " " + tabreponse[t].corect + "<br>" + "<br>");
 
-        $("#tt").append("pour la question"+" "+tabquizz[t].Question+"<br>"+"la reponse étais"+" "+tabreponse[t].corect+"<br>"+"<br>");
+
         if( nombreQuestion==9){
-
-            document.getElementById("boutton").style.display="block";
         $("#englob").toggle("slow");
+            document.getElementById("boutton").style.display="block";
         document.getElementById("score").style.display="block";
         document.getElementById('stat').innerHTML="vous avez"+" "+score+"/9";
+        snd.pause();
+           document.getElementById("boutton").style.display="block";
+     //   countdown=999999999;
+            //Arret du compteur
+            clearInterval(compteurObj);
+
     }}
 }, 1000);
 
@@ -215,9 +238,13 @@ countdownNumberEl.textContent = countdown;
 
 $("#but").click(function () {
 
-    document.getElementById('test').className.baseVal='';
-    alert ('Vous avez repondu');
-    document.getElementById('test').className.baseVal='test';
+  document.getElementById('test').className.baseVal='';
+//alert("tu a repondu a la question ");
+
+    window.setTimeout(function() {
+        document.getElementById('test').className.baseVal='test';
+    },250);
+
     /*$("svg").css({
         'position': 'absolute',
     'top': '0',
@@ -308,18 +335,20 @@ $("#but").click(function () {
 
 console.log(nombreQuestion);
     if(nombreQuestion===9){
-        document.getElementById("boutton").style.display="block";
         $("#englob").toggle("slow");
         document.getElementById("score").style.display="block";
         document.getElementById('stat').innerHTML="vous avez"+" "+score+"/9";
-
-    }
+        snd.pause();
+       // countdown=999999999;
+        //Arreter le compteur
+        clearInterval(compteurObj);
+   }
 });
+
 
 function reset(){
     location.reload();
 }
-
 
 
 
